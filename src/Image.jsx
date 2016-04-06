@@ -2,6 +2,7 @@
 var React = require('react');
 var $ = require('jquery');
 var ImageMixin = require('./ImageMixin');
+var ImagePreloader = require('./ImagePreloader');
 
 // Eventually the React-components
 

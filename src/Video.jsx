@@ -1,3 +1,8 @@
+'use strict';
+var React = require('react');
+var $ = require('jquery');
+var ImageMixin = require('./ImageMixin');
+
 var Video = React.createClass({
 
     didEndPlaying: function (e) {
@@ -18,4 +23,5 @@ var Video = React.createClass({
         )
     }
 })
+
 module.exports.Video = Video;

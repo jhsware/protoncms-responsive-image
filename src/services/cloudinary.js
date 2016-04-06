@@ -4,6 +4,8 @@ var createUtility = require('component-registry').createUtility;
 
 var IImageService = require('protoncms-core').interfaces.IImageService;
 
+var utils = require('./utils');
+
 var ServiceUtility = createUtility({
     implements: IImageService,
     name: 'cloudinary',
@@ -52,8 +54,9 @@ var ServiceUtility = createUtility({
             }
             return tmp[0] + '/image/upload/' + options.join(',') + '/' + tmp[1];
         }
-    }
+    },
     
+    upload: utils.uploadFile    
 });
 
 registry.registerUtility(ServiceUtility);

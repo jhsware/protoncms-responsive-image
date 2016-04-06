@@ -1,16 +1,10 @@
 "use strict";
 var registry = require('protoncms-core').registry;
 var React   = require('react/addons');
-var _       = require('lodash');
 var $ = require('jquery');
 
 var IImageService = require('protoncms-core').interfaces.IImageService;
 
-/*
-        if (!_.isUndefined(this.props.image.url)) {
-            imageUrl = this.props.image.url;
-        }
-*/
 
 var isDesktopBrowser = function () {
     // https://en.wikipedia.org/wiki/Display_resolution
@@ -62,7 +56,7 @@ var _getImageServiceUtility = function (src) {
     
     var defaultService;
     var src;
-    for (var i = 0, imax = imageServiceUtils.length) {
+    for (var i = 0, imax = imageServiceUtils.length; i < imax; i++) {
         var utilObj = imageServiceUtils[i];
         if (utilObj.name === undefined) {
             defaultService = utilObj.utility;
@@ -165,4 +159,4 @@ var ImageMixin = {
     }
 };
 
-module.exports.ImageMixin = ImageMixin;
+module.exports = ImageMixin;

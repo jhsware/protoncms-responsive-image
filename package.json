@@ -1,16 +1,26 @@
 {
   "name": "protoncms-responsive-image",
   "version": "0.1.0",
-  "description": "ProtonCMS -- load a small image and then replace it with an image with exact dimensions in browser",
+  "description": "ProtonCMS -- load a small image and then replace it with an image with exact dimensions of element in browser",
   "repository" : { 
       "type" : "git",
-      "url" : "https://github.com/jhsware/protoncms-forms-richtext.git"
+      "url" : "https://github.com/jhsware/protoncms-responsive-image.git"
   },
   "main": "./src/index.js",
+  "browserify": {
+    "transform": [
+      [
+        "reactify",
+        {
+          "harmony": true
+        }
+      ]
+    ]
+  },
   "dependencies": {
   },
   "peerDependencies": {
-    "react": "^0.13.0",
+    "react": "~0.13.0",
     "protoncms-core": ">=0.1",
     "component-registry": ">=0.1",
     "jquery": "^2.1.3"
