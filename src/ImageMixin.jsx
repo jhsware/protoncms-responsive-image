@@ -1,6 +1,6 @@
 "use strict";
 var registry = require('protoncms-core').registry;
-var React   = require('react/addons');
+var React   = require('react');
 var $ = require('jquery');
 
 var IImageService = require('protoncms-core').interfaces.IImageService;
