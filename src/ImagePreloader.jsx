@@ -1,5 +1,6 @@
 'use strict';
 var React = require('react');
+var ReactDOM = require('react-dom');
 var $ = require('jquery');
 
 var ImagePreloader = React.createClass({
@@ -16,11 +17,11 @@ var ImagePreloader = React.createClass({
     },
     
     componentDidMount: function () {
-        $(this.refs['el'].getDOMNode()).on('load', this.onLoadReady);
+        $(ReactDOM.findDOMNode(this.refs['el'])).on('load', this.onLoadReady);
     },
     
     componentWillUnmount: function () {
-        $(this.refs['el'].getDOMNode()).off('load', this.onLoadReady)
+        $(ReactDOM.findDOMNode(this.refs['el'])).off('load', this.onLoadReady)
         // TODO: Set src to some mini-image to GB on mobile Safari (is this still needed?)
         this.setState({
             src: '/assets/img/trans.gif'

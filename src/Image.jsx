@@ -1,5 +1,6 @@
 'use strict';
 var React = require('react');
+var ReactDOM = require('react-dom');
 var $ = require('jquery');
 var ImageMixin = require('./ImageMixin');
 var ImagePreloader = require('./ImagePreloader');
@@ -16,11 +17,11 @@ var Image = React.createClass({
     },
     
     componentDidMount: function () {
-        $(this.refs['el'].getDOMNode()).on('load', this.onLoadReady);
+        $(ReactDOM.findDOMNode(this.refs['el'])).on('load', this.onLoadReady);
     },
     
     componentWillUnmount: function () {
-        $(this.refs['el'].getDOMNode()).off('load', this.onLoadReady)
+        $(ReactDOM.findDOMNode(this.refs['el'])).off('load', this.onLoadReady)
     },
 
     render: function () {

@@ -1,10 +1,10 @@
 "use strict";
 var registry = require('protoncms-core').registry;
 var React   = require('react');
+var ReactDOM = require('react-dom');
 var $ = require('jquery');
 
 var IImageService = require('protoncms-core').interfaces.IImageService;
-
 
 var isDesktopBrowser = function () {
     // https://en.wikipedia.org/wiki/Display_resolution
@@ -118,7 +118,7 @@ var ImageMixin = {
     updateRealSize: function () {
         var state = this.state;
         
-        var $el = $(this.refs['el'].getDOMNode());
+        var $el = $(ReactDOM.findDOMNode(this.refs['el']));
         var width = $el.outerWidth();
         var height = $el.outerHeight();
         
