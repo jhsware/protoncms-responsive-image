@@ -1,6 +1,6 @@
 {
   "name": "protoncms-responsive-image",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "ProtonCMS -- load a small image and then replace it with an image with exact dimensions of element in browser",
   "repository" : { 
       "type" : "git",
