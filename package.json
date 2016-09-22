@@ -6,16 +6,13 @@
       "type" : "git",
       "url" : "https://github.com/jhsware/protoncms-responsive-image.git"
   },
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "browserify": {
     "transform": [[ "babelify", { "presets": ["react"] } ]]
   },
   "dependencies": {
   },
-  "peerDependencies": {
-    "babel-core": ">=6.5.2",
-    "babel-preset-react": ">=6.5.0",
-    
+  "peerDependencies": {    
     "react": ">=15.0.1",
     "react-dom": ">=15.0.1",
     
@@ -24,9 +21,13 @@
     "jquery": "^2.1.3"
   },
   "devDependencies": {
+      "babel-cli": ">=6.5.0",
+      "babel-core": ">=6.5.2",
+      "babel-preset-react": ">=6.5.0"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --reporter mocha-better-spec-reporter"
+    "test": "./node_modules/mocha/bin/mocha --reporter mocha-better-spec-reporter",
+    "build": "./node_modules/babel-cli/bin/babel.js ./src --out-dir ./dist"
   },
   "author": "Sebastian Ware",
   "license": "Copyright Sebastian Ware"
